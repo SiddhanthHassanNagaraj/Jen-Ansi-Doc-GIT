@@ -8,7 +8,8 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-              git branch: 'master', url: 'https://github.com/Vishwanathms/SampleMaven'
+              git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
+              git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
             }
         }
     }
