@@ -8,8 +8,12 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-              git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
-              git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
+                sh "mkdir samplemaven"
+                sh "cd samplemaven" 
+                git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
+                sh "mkdir JADG"
+                sh "cd JADG"
+                git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
             }
         }
         stage ("maven build") {
