@@ -1,7 +1,5 @@
-FROM tomcat:latest
+FROM tomcat:8
+# Take the war and copy to webapps of tomcat
+COPY target/*.war /usr/local/tomcat/webapps/
 
-WORKDIR /app
-
-ADD . /app
-
-CMD {"java", "Simple"}
+EXPOSE 8080
