@@ -3,7 +3,7 @@ pipeline {
     stages { 
         stage ("Build with Ansible") {
             steps {
-                sh "ansbile-playbook Install-Depen01.yml"
+                sh "ansible-playbook Install-Depen01.yml"
             }
         }
         stage ("SCM Checkin-1") {
