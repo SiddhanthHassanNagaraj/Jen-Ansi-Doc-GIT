@@ -22,6 +22,7 @@ pipeline {
                 jdk 'JDK1.8'
             }
             steps {
+                sh "cd samplemaven"
                 sh "mvn package"
             }
 	    input {
