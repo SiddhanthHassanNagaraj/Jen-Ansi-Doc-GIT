@@ -7,7 +7,6 @@
   - name: Install dependancies 
     yum: 
       name: 
-      - git
       - java-1.8.0-openjdk-devel
       - docker
       state: present
@@ -15,3 +14,9 @@
     service:
       name: docker
       state: started
+  - name: Install Docker compose
+    command: "sudo curl -L 'https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose"
+  - name: Make binary executable
+    command: "sudo chmod +x /usr/local/bin/docker-compose"
+  - name: Verify the installation
+    command: "docker-compose --version"
