@@ -14,5 +14,3 @@
     service:
       name: docker
       state: started
-  - name: Verify the installation
-    command: "docker-compose --version"
