@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: tomcatcust01
+    image: vishwacloudlab/tomcatcust01
     build: .
     ports:
       - "8000:8080"
