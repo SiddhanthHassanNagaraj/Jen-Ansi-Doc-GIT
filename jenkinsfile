@@ -9,9 +9,14 @@ pipeline {
         stage ("SCM Checkin-1") {
             steps {
                 if( fileExists('JAGD')) {
-                } else {}
+                } else {
                     // Create all folders up-to and including B
-                    folder.mkdirs()
+                    sh "mkdir JAGD"
+                }
+                if( fileExists('samplemaven')) {
+                } else {
+                    // Create all folders up-to and including B
+                    sh "mkdri samplemaven"
                 }
                 dir("samplemaven") {
                     git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
