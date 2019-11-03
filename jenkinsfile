@@ -40,7 +40,9 @@ pipeline {
         }
         stage ('Build Image and run container') {
             steps {
-                sh "docker-compose up -d"
+                dir("JAGD") {
+                    sh "docker-compose up -d"
+                }
             }
         }
         stage ('push it to docker hub') {
