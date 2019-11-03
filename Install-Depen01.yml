@@ -18,3 +18,5 @@
     service:
       name: docker
       enabled: yes
+  - name: test ansible
+    command: ping yahoo.com -c 3
