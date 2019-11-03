@@ -8,11 +8,14 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-                sh "mkdir samplemaven"
+                def folder = new File( 'samplemaven/JAGD' )
+                if( !folder.exists() ) {
+                    // Create all folders up-to and including B
+                    folder.mkdirs()
+                }
                 dir("samplemaven") {
                     git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
                 } 
-                sh "mkdir JAGD"
                 dir("JAGD") {
                    git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
                 }
