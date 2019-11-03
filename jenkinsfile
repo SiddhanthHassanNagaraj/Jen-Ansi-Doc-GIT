@@ -44,5 +44,10 @@ pipeline {
                 sh "docker push vishwacloudlab/tomcatcust01"
             }
         }
+        stage ('clean the image and the current folder')
+            steps {
+                sh "docker image rmi vishwacloudlab/tomcatcust01"
+                sh "rm -RF *"
+            }
     }
 }
