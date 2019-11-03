@@ -23,7 +23,7 @@ pipeline {
                     }
                 }
                 dir("samplemaven") {
-                    git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
+                    git branch: 'master', url: 'https://github.com/Vishwanathms/SampleMaven'
                 } 
                 dir("JAGD") {
                    git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
