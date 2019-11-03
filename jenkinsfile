@@ -8,7 +8,12 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-                def folder = new File( 'samplemaven/JAGD' )
+                def folder = new File( 'JAGD' )
+                if( !folder.exists() ) {
+                    // Create all folders up-to and including B
+                    folder.mkdirs()
+                }
+                def folder = new File( 'samplemaven' )
                 if( !folder.exists() ) {
                     // Create all folders up-to and including B
                     folder.mkdirs()
