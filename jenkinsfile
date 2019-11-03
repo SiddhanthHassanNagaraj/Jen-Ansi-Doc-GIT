@@ -8,15 +8,10 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-                def folder = new File( 'JAGD' )
-                if( !folder.exists() ) {
+                if( fileExists('JAGD')) {
+                } else {}
                     // Create all folders up-to and including B
                     folder.mkdirs()
-                }
-                def folder1 = new File( 'samplemaven' )
-                if( !folder1.exists() ) {
-                    // Create all folders up-to and including B
-                    folder1.mkdirs()
                 }
                 dir("samplemaven") {
                     git branch: 'B1', url: 'https://github.com/Vishwanathms/SampleMaven'
