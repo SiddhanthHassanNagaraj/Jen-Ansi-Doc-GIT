@@ -38,8 +38,15 @@ pipeline {
                 sh "sudo chmod +x /usr/local/bin/docker-compose"
             }
         }
-        stage ('Build Image') {
-            sh "docker build . -t vishwacloudlab/tomcatcust01"
+        stage ('Build Image and run container') {
+            steps {
+                sh "docker-compose up -d"
+            }
+        }
+        stage ('push it to docker hub') {
+            steps {
+                sh "docker push vishwacloudlab/tomcatcust01"
+            }
         }
     }
 }
