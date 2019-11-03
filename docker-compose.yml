@@ -5,6 +5,6 @@ services:
     image: vishwacloudlab/tomcatcust01
     build: 
       context: ./
-      dockerfile: samplemaven/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8000:8080"
