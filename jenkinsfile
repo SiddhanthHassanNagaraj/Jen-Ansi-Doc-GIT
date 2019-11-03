@@ -28,8 +28,10 @@ pipeline {
                     sh "mvn package"
                 }
             }
-	    input {
-                 message 'Mvn Package is Successfull, I can Proceed'
+        }    
+        stage ('docker image creation') {
+	        input {
+                 message 'Mvn Package is Successfull, can I Proceed'
             }
         }
     }
