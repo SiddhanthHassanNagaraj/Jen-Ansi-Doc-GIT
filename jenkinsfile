@@ -8,7 +8,7 @@ pipeline {
         }
         stage ("SCM Checkin-1") {
             steps {
-                scripts {
+                script {
                     if( !fileExists('JAGD')) {
                         stage ('stage 1') {
                             // Create all folders up-to and including B
