@@ -5,13 +5,13 @@ pipeline {
             steps {
                 script {
                     if( !fileExists('JAGD')) {
-                        stage ('stage 1') {
+                        stage ('Create JAGD folder') {
                             // Create all folders up-to and including B
                             sh "mkdir JAGD"
                         }
                     }
                     if( !fileExists('samplemaven')) {
-                        stage ('stage 2') {
+                        stage ('Create Maven folder') {
                             // Create all folders up-to and including B
                             sh "mkdir samplemaven"
                         }
