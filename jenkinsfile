@@ -54,6 +54,7 @@ pipeline {
         }
         stage ('clean the image and the current folder') {
             steps {
+                sh "docker-compose down"
                 sh "docker image rmi vishwacloudlab/tomcatcust01"
                 sh "rm -Rf LS-JADG*"
             }
