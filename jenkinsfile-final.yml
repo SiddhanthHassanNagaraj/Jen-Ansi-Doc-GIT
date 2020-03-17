@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Java' }
+    agent { label 'java' }
     stages { 
         stage ("Build with Ansible") {
             steps {
