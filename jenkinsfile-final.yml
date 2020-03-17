@@ -23,10 +23,10 @@ pipeline {
                     }
                 }
                 dir("samplemaven") {
-                    git branch: 'master', url: 'https://github.com/Vishwanathms/SampleMaven'
+                    git branch: 'master', url: 'https://github.com/SiddhanthHassanNagaraj/SampleMaven'
                 } 
                 dir("JAGD") {
-                   git branch: 'master', url: 'https://github.com/Vishwanathms/Jen-Ansi-Doc-GIT'
+                   git branch: 'master', url: 'https://github.com/SiddhanthHassanNagaraj/Jen-Ansi-Doc-GIT'
                 }
             }
         }
@@ -54,12 +54,12 @@ pipeline {
         }
         stage ('push it to docker hub') {
             steps {
-                sh "docker push vishwacloudlab/tomcatcust01"
+                sh "docker push siddhanthhn/tomcatcust001"
             }
         }
         stage ('clean the image and the current folder') {
             steps {
-                sh "docker image rmi vishwacloudlab/tomcatcust01"
+                sh "docker image rmi siddhanthhn/tomcatcust001"
                 sh "rm -RF *"
             }
         }
