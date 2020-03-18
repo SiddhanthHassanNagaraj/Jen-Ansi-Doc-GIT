@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: siddhanthhn/tomcatcust001
+    image: siddhanthhn/tomcatcust02
     build: 
       context: ./
       dockerfile: Dockerfile
