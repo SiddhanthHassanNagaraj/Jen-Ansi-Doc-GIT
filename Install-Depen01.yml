@@ -1,6 +1,6 @@
 ---
 - name: Setup Slave for Jenkins Jobs
-  hosts: slave
+  hosts: Slave 2
   become: true
   
   tasks:
