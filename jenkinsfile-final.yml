@@ -33,7 +33,7 @@ pipeline {
         stage ("maven build") {
             tools {
                 maven 'Maven3.5.2'
-                /*jdk 'JDK1.8'*/
+                jdk 'JDK1.8'
             }
             steps {
                 dir("samplemaven") {
