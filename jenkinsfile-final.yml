@@ -59,7 +59,7 @@ pipeline {
         }
         stage ('clean the image and the current folder') {
             steps {
-                sh "sudo docker image rmi siddhanthhn/tomcatcust02"
+                sh "sudo docker image rmi siddhanthhn/tomcatcust02 -f"
                 sh "rm -RF *"
             }
         }
