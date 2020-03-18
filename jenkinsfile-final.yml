@@ -54,12 +54,12 @@ pipeline {
         }
         stage ('push it to docker hub') {
             steps {
-                sh "sudo docker push siddhanthhn/tomcatcust001"
+                sh "sudo docker push siddhanthhn/tomcatcust02"
             }
         }
         stage ('clean the image and the current folder') {
             steps {
-                sh "sudo docker image rmi siddhanthhn/tomcatcust001"
+                sh "sudo docker image rmi siddhanthhn/tomcatcust02"
                 sh "rm -RF *"
             }
         }
