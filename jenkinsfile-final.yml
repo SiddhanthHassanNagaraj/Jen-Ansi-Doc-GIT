@@ -49,17 +49,17 @@ pipeline {
             /* we would be executing the docker-compose in the working directory, 
             bcz of the docker build issue as it can understand where is the war file. 
             we will not be able to give the complete path as src to copy the war file */
-                sh "docker-compose up -d"
+                sh "sudo docker-compose up -d"
             }
         }
         stage ('push it to docker hub') {
             steps {
-                sh "docker push siddhanthhn/tomcatcust001"
+                sh "sudo docker push siddhanthhn/tomcatcust001"
             }
         }
         stage ('clean the image and the current folder') {
             steps {
-                sh "docker image rmi siddhanthhn/tomcatcust001"
+                sh "sudo docker image rmi siddhanthhn/tomcatcust001"
                 sh "rm -RF *"
             }
         }
